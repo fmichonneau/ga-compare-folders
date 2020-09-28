@@ -12,10 +12,15 @@ ga_compare_folders <- function(path_1, path_2, out) {
   stopifnot(rlang::is_scalar_character(path_2))
   stopifnot(rlang::is_scalar_character(out))
 
-  comparer::compare_folders(path_1, path_2) %>%
+  res <- comparer::compare_folders(path_1, path_2) %>%
     dplyr::filter(!identical) %>%
-    dplyr::pull(files) %>%
-    cat(sep = "\n", file = out)
+    dplyr::pull(files)
+
+  if (length(res) > 0) {
+    cat(res, sep = "\n", file = out)
+  }
+
+  res
 
 }
 
