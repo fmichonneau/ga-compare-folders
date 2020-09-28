@@ -17,7 +17,7 @@ ga_compare_folders <- function(path_1, path_2, out) {
     dplyr::pull(files)
 
   if (length(res) > 0) {
-    cat(res, sep = "\n", file = out)
+    cat(res, sep = " ", file = out)
   }
 
   res
