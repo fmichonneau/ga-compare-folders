@@ -21,4 +21,4 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
 COPY compare-folders.R /compare-folders.R
 COPY entrypoint.sh /entrypoint.sh
 
-CMD ["./entrypoint.sh"]
+CMD ["/entrypoint.sh"]
