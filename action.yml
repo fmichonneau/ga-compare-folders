@@ -1,0 +1,12 @@
+name: 'Compare folders'
+description: 'Compare whether files with same names in 2 folders are identical based on their file hashes'
+inputs:
+  folder_1:
+    description: first folder to compare
+    required: true
+  folder_2:
+    description: second folder to compare
+    required: true
+  out:
+    description: the file where the write the files that are different
+    required: true
