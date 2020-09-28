@@ -10,3 +10,10 @@ inputs:
   out:
     description: the file where the write the files that are different
     required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.folder_1 }}
+    - ${{ inputs.folder_2 }}
+    - ${{ inputs.out }}
