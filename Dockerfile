@@ -16,7 +16,7 @@ RUN apt-get update -qq && apt-get -y --no-install-recommends install \
         magrittr \
         tibble \
         rlang  \
-        && R -e "remotes::install_github('fmichonneau/comparer')"
+        && R -e "remotes::install_github('fmichonneau/fiderent')"
 
 COPY compare-folders.R /compare-folders.R
 COPY entrypoint.sh /entrypoint.sh
