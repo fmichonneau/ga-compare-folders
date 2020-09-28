@@ -24,6 +24,6 @@ echo "Folder 1: ${FOLDER_1}"
 echo "Folder 2: ${FOLDER_2}"
 echo "  Output: ${OUTPUT}"
 
-sh -c "/usr/bin/env Rscript compare-folders.R ${FOLDER_1} ${FOLDER_2} ${OUTPUT}"
+sh -c "/usr/bin/env Rscript /compare-folders.R ${FOLDER_1} ${FOLDER_2} ${OUTPUT}"
 
 echo "Done."
