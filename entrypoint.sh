@@ -4,6 +4,6 @@ echo "Folder 1: $1"
 echo "Folder 2: $2"
 echo "Output: $3"
 
-/usr/bin/env Rscript compare-folders.R "$1" "$2"
+/usr/bin/env Rscript compare-folders.R "$1" "$2" "$3"
 
 echo "Done."
