@@ -1,5 +1,6 @@
 name: Publish Docker image
 on:
+  push:
   release:
     types: [published]
 jobs:
@@ -9,11 +10,16 @@ jobs:
     steps:
       - name: Check out the repo
         uses: actions/checkout@v2
+
+      - name: Login to GitHub Container Registry
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.CR_PAT }}
+
       - name: Push to GitHub Packages
         uses: docker/build-push-action@v1
         with:
-          username: ${{ github.actor }}
-          password: ${{ secrets.CR_PAT }}
-          registry: gcr.io
           repository: fmichonneau/ga-compare-folders
           tag_with_ref: true
