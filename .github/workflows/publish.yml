@@ -13,7 +13,7 @@ jobs:
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
-          registry: docker.pkg.github.com
-          repository: fmichonneau/ga-compare-folders/ga-compare-folders-image
+          password: ${{ secrets.CR_PAT }}
+          registry: gcr.io
+          repository: fmichonneau/ga-compare-folders
           tag_with_ref: true
