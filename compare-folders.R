@@ -18,6 +18,7 @@ ga_compare_folders <- function(path_1, path_2, out, add_roots = addr) {
     dplyr::filter(!identical) %>%
     dplyr::pull(files)
 
+  message("add roots is:", str(add_roots))
   if (add_roots) {
     to_add <- vapply(
       res[grepl("/index.html$", res, ignore.case = TRUE)],
