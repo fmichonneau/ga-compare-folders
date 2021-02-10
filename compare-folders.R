@@ -3,11 +3,15 @@ args <- commandArgs(trailingOnly = TRUE)
 path_1 <- args[1]
 path_2 <- args[2]
 out    <- args[3]
-addr   <- as.logical(args[4])
+addr   <- args[4]
 
+str(args[4])
 require(magrittr, quietly = TRUE)
 
-ga_compare_folders <- function(path_1, path_2, out, add_roots = addr) {
+ga_compare_folders <- function(path_1, path_2, out, add_roots = c("true", "false")) {
+
+  add_roots <- match.arg(add_roots)
+  add_roots <- as.logical(add_roots)
 
   stopifnot(rlang::is_scalar_character(path_1))
   stopifnot(rlang::is_scalar_character(path_2))
@@ -18,7 +22,6 @@ ga_compare_folders <- function(path_1, path_2, out, add_roots = addr) {
     dplyr::filter(!identical) %>%
     dplyr::pull(files)
 
-  message("add roots is:", str(add_roots))
   if (add_roots) {
     to_add <- vapply(
       res[grepl("/index.html$", res, ignore.case = TRUE)],

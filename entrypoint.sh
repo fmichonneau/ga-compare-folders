@@ -20,7 +20,7 @@ if [ -z "$OUTPUT" ]; then
 fi
 
 if [ -z "$ADD_ROOTS" ]; then
-    ADD_ROOTS="TRUE"
+    ADD_ROOTS="true"
 fi
 
 echo "Folder 1: ${FOLDER_1}"
