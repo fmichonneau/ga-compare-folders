@@ -5,7 +5,7 @@ path_2 <- args[2]
 out    <- args[3]
 addr   <- args[4]
 
-str(args[4])
+str(args)
 require(magrittr, quietly = TRUE)
 
 ga_compare_folders <- function(path_1, path_2, out, add_roots = c("true", "false")) {
@@ -42,4 +42,4 @@ ga_compare_folders <- function(path_1, path_2, out, add_roots = c("true", "false
 
 }
 
-ga_compare_folders(path_1, path_2, out)
+ga_compare_folders(path_1, path_2, out, addr)

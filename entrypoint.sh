@@ -23,11 +23,11 @@ if [ -z "$ADD_ROOTS" ]; then
     ADD_ROOTS="true"
 fi
 
-echo "Folder 1: ${FOLDER_1}"
-echo "Folder 2: ${FOLDER_2}"
-echo "  Output: ${OUTPUT}"
+echo " Folder 1: ${FOLDER_1}"
+echo " Folder 2: ${FOLDER_2}"
+echo "   Output: ${OUTPUT}"
 echo "Add roots: ${ADD_ROOTS}"
 
-sh -c "/usr/bin/env Rscript /compare-folders.R ${FOLDER_1} ${FOLDER_2} ${OUTPUT}${ADD_ROOTS}"
+sh -c "/usr/bin/env Rscript /compare-folders.R ${FOLDER_1} ${FOLDER_2} ${OUTPUT} ${ADD_ROOTS}"
 
 echo "Done."
