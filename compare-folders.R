@@ -34,6 +34,15 @@ ga_compare_folders <- function(path_1, path_2, out, add_roots = c("true", "false
     res <- unname(c(res, to_add))
   }
 
+  ## the file that can be used to specify the paths to invalidate cannot
+  ## be more than 4000 characters. If it's the case, we only write `*`
+  ## to the file to invalidate everything.
+  if (sum(nchar(res)) + length(res) >=  4000) {
+    message("too many files to invalidate, default on everything.")
+    cat("*", file = out)
+    return(res)
+  }
+  
   if (length(res) > 0) {
     cat(res, sep = " ", file = out)
   }
