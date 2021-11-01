@@ -39,7 +39,7 @@ ga_compare_folders <- function(path_1, path_2, out, add_roots = c("true", "false
   ## to the file to invalidate everything.
   if (sum(nchar(res)) + length(res) >=  4000) {
     message("too many files to invalidate, default on everything.")
-    cat("\\"/*\\"", file = out)
+    cat("\"/*\"", file = out)
     return(res)
   }
   
